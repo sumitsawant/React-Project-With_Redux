@@ -3,34 +3,34 @@ import MyComponent from './MyComponent';
 import axios from 'axios';
 import {Button,Row,Input} from 'react-materialize'
 
-class App extends Component {
+class SubmitComponent extends Component {
 
-    constructor(){
+  //   constructor(){
      
-      super();
-      this.state = {
-      items: [],
-      sysId: "571783655c14710e248216ba",
-      isLoaded: true
-    }
-    this.submit={submit: false};
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.getData = this.getData.bind(this);
-  }
+  //     super();
+  //     this.state = {
+  //     items: [],
+  //     sysId: "571783655c14710e248216ba",
+  //     isLoaded: true
+  //   }
+  //   //  this.submit={submit: false};
+  //   // this.handleSubmit = this.handleSubmit.bind(this);
+  //   // this.getData = this.getData.bind(this);
+  // }
 
-
-  handleSubmit()
+handleSubmit()
   {
     this.getData();
 
   }
+componentDidMount(){
 
-  componentDidMount(){
-    this.getData();
-  }
+  this.getData();
 
-  handleChange(e){
-    this.setState({
+}
+
+handleChange(e){
+  this.setState({
       sysId: e.target.value
     });
   }
@@ -39,7 +39,7 @@ class App extends Component {
       this.setState({
           isLoaded: false,
         });
-  axios.get("http://localhost:4000/api/data/"+this.state.sysId)
+      axios.get("http://localhost:4000/api/data/"+this.state.sysId)
       .then(
         (result) => {
 
@@ -63,26 +63,25 @@ class App extends Component {
       )
   }
 
-
-
 render() {
-	
-	return (
-
-  	<div>  
+  
+  return (
+      
+      <div>  
       <Row>
           <Input s={6} 
             label="Please enter System ID to continue:"
-            defaultValue={this.state.sysId}
+            defaultValue={this.props.sysId}
             onChange={this.handleChange.bind(this)}
       
           />
         </Row>
         <Button onClick={this.handleSubmit}>Submit</Button>
-        <MyComponent isLoaded = {this.state.isLoaded} items = {this.state.items} onSubmit= {this.handleSubmit}/>
+        <MyComponent isLoaded = {this.props.isLoaded} items = {this.props.items} onSubmit= {this.handleSubmit}/>
     </div> 
   );
-    }
-}
+   
+  }
 
-export default App;
+}
+export default SubmitComponent;

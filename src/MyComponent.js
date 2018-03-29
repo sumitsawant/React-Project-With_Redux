@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import AddButton from './AddButton';
 import {Button,Table,Input} from 'react-materialize';
 import {connect} from 'react-redux';
+
 class MyComponent extends React.Component {
   
   // constructor(props) {
@@ -17,10 +18,10 @@ class MyComponent extends React.Component {
      
   // }
 
-handleEdit()
-{
-   this.props.dispatch({type:"handleEdit"});
-}
+  handleEdit()
+  {
+     this.props.dispatch({type:"handleEdit"});
+  }
 
 // componentDidMount() {
   // console.log('saassa');
@@ -58,7 +59,7 @@ handleEdit()
        
       <tbody>
           { 
-            !this.state.edit?
+            !this.props.edit?
             (
               items.map((item,index) => (
                 <tr key={'sysrow'+index}>
@@ -66,7 +67,7 @@ handleEdit()
                   <td>{item.Email}</td>
                   <td>{item.AccountNumber} </td>
                    <td>{item.UserRole} </td>
-                  <td>{this.state.edit ? <AddButton /> : ""}</td>
+                  <td>{this.props.edit ? <AddButton /> : ""}</td>
                   <td>  
                   <Button onClick={this.handleEdit}>Edit</Button>
                   </td>
