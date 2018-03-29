@@ -4,12 +4,12 @@ import {Button,Table,Input} from 'react-materialize';
 import {connect} from 'react-redux';
 class MyComponent extends React.Component {
   
-  constructor(props) {
+  // constructor(props) {
     
-    super(props);
-    this.state = {
+  //   super(props);
+  //   this.state = {
       
-    };
+  //   };
     
     
   //   this.handleEdit = this.handleEdit.bind(this);

@@ -25,6 +25,7 @@ function reducer(state = initailState, action){
         return{
                   edit: !this.state.edit
         };
+        break;
         default:
         return state;    
     }
