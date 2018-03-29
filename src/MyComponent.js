@@ -15,7 +15,7 @@ class MyComponent extends React.Component {
   //   this.handleEdit = this.handleEdit.bind(this);
   //  this.getData = this.getData.bind(this);
      
-  }
+  // }
 
 handleEdit()
 {
