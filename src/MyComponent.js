@@ -4,25 +4,18 @@ import {Button,Table,Input} from 'react-materialize';
 import {connect} from 'react-redux';
 class MyComponent extends React.Component {
   
-  // constructor(props) {
+  constructor(props) {
     
-    // super(props);
-    // this.state = {
-    
-      // error: null,
-      // isLoaded: false,
-      // editing: false,
-      // edit: false,
-      // items: []
+    super(props);
+    this.state = {
       
-      
-    // };
+    };
     
     
-    //this.handleEdit = this.handleEdit.bind(this);
-   // this.getData = this.getData.bind(this);
+  //   this.handleEdit = this.handleEdit.bind(this);
+  //  this.getData = this.getData.bind(this);
      
-  // }
+  }
 
 handleEdit()
 {
@@ -37,7 +30,7 @@ handleEdit()
 
   render() {
    
-    const { error, edit} = this.state;
+    const { error, edit} = this.props;
     const { items, isLoaded } = this.props;
 
     if(error) {
@@ -106,14 +99,14 @@ handleEdit()
   }
 }
 
-const mapStatetoProps =(state)=>({
-  
-  error: state.error,
-  isLoaded:state.isLoaded,
-  editing: state.editing,
-  edit: state.edit,
-  items:state.items
+const mapStateToProps = (state)=>{
+  return {
+    error: state.error,
+    isLoaded: state.isLoaded,
+    editing: state.editing,
+    edit: state.edit,
+    items: state.items
+  }
+}
 
-})
-
-export default connect(mapStatetoProps)(MyComponent);
+export default connect(mapStateToProps)(MyComponent);

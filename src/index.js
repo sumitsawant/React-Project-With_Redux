@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+// import App from './App';
+import MyComponent from './MyComponent';
 import registerServiceWorker from './registerServiceWorker';
 import {createStore} from "redux"
 import {Provider} from "react-redux";
-import MyComponent from './Duxcomp';
+
 
 const initailState ={
    
@@ -16,7 +17,7 @@ const initailState ={
     
 };
 
-function reducer(state,action){
+function reducer(state = initailState, action){
 
     switch(action.type){
 
