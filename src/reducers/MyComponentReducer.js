@@ -4,31 +4,24 @@ const initialState = {
     error: null,
     isLoaded: false,
     editing: false,
-    edit:false,
+    edit: false,
     items: []
 
 };
 
 const MyComponentReducer = (state = initialState, action) => {
-  switch (action.type) {
-    case 'handleEdit':
-      state = { 
-        ...state, 
-        edit: !this.state.edit.concat(action.payload) 
-      };
-      return state;
-      break;
-    case 'handlt':
-      state = { 
-        ...state, 
-        edit: !this.state.edit.concat(action.payload) 
-      };
-      return state;
-      break;
-    
-    default:
-      return state;
-  }
+    switch (action.type) {
+        case 'handleEdit':
+            state = {
+                ...state,
+                edit: !this.state.edit.concat(action.payload)
+            };
+            return state;
+            break;
+
+        default:
+            return state;
+    }
 };
 
 export default MyComponentReducer;
