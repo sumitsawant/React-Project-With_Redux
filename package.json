@@ -8,7 +8,7 @@
     "body-parser": "^1.18.2",
     "bundle-js": "^1.0.2",
     "express": "^4.16.3",
-    "mongodb": "^3.0.4",
+    "mongodb": "^3.1.13",
     "mongoose": "^5.0.10",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
